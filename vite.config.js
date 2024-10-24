@@ -11,6 +11,14 @@ export default defineConfig(({ command }) => {
     },
     root: 'src',
     build: {
+      rollupOptions: {
+        input: 'src/index.html',
+        rollupOptions: {
+          input: 'src/main.js', // Друге визначення
+        }
+      },
+        
+        
       sourcemap: true,
       rollupOptions: {
         input: glob.sync('./src/*.html'),
